@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Object Weight Prediction</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <h2 class="text-center "><br>Object Weight Prediction Using RGBD Imaging and Semantic Metadata Integration <br></h2>
+
+            <h4 class="text-center "><br>Abstract<br></h4>
+            <p class="text-center ">
+                We propose a novel dataset and method for predicting object weight using multimodal data captured with an RGBD camera. The dataset integrates RGB images, depth maps, and detailed metadata, facilitating a comprehensive analysis of the relationship between visual and physical properties of objects.
+                <br>
+                The data acquisition system was designed to ensure uniformity, reproducibility, and efficiency. It comprises a motorized turntable for precise multi-angle captures, a high-resolution RGBD camera for simultaneous acquisition of visual and depth information, and custom software for automation and synchronization. For each object, 12 RGB images and 12 corresponding depth maps were recorded at regular angular intervals, accompanied by metadata including exact weight measurements, material composition, and hierarchical taxonomy based on WordNet. This semantic organization supports advanced contextual and relational analyses of objects in scenes.
+                <br>
+                The dataset stands out for its multimodal richness, methodological rigor, and semantic interoperability, making it a valuable resource for advancing computer vision research. Applications include weight prediction, object recognition, and semantic scene understanding, particularly in studying the correlation between visual cues and material properties. This work lays a foundation for further exploration of multimodal approaches in vision-based object analysis.
+            </p>
+            <br><br>
+            <p class="text-center ">
+                <a href="www.halim.info">Halim Djerroud &sup1;</a>,
+                <a href="https://ieeexplore.ieee.org/author/37086144118">Nico Steyn &sup2;</a>,
+                <a href="https://scholar.google.com/citations?user=Cd6lHnsAAAAJ&hl=fr">Abderraouf Benali &sup1;</a>
+            </p>
+            <p class="text-center ">
+                &sup1;Université Paris-Saclay, UVSQ, LISV, 78140, Vélizy-Villacoublay, France.
+                <br>
+                &sup2; Tshwane University of Technology. Department of Electrical Engineering, Pretoria, South Africa.
+            </p>
+            <br>
+
+            <div class="text-center ">
+                <a href="#" class="btn btn-dark"> <i class="bi bi-file-earmark-pdf"></i> Paper (comming) </a> &nbsp;
+                <a href="https://github.com/hdd-robot" class="btn btn-dark"> <i class="bi bi-database-fill"></i> Dataset  </a> &nbsp;
+                <a href="https://perso.halim.info/" class="btn btn-dark"> <i class="bi bi-github"></i> Code</a>
+            </div>
+
+
+            <div class="text-center">
+                <img src="img/depth_input_output.png" class="img-fluid " alt="weight prediction rgb depth metadata">
+            </div>
+
+            <br>
+
+            <div class="text-center">
+                <h4>Demo</h4>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <video controls autoplay loop muted  class="w-50">
+                    <source src="img/test_depth_video.mp4" type="video/webm" >
+                </video>
+            </div>
+            <br>
+
+
+            <div class="text-center">
+                <h4>Dataset</h4>
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <img src="img/books_all.png" class="img-fluid " alt="weight prediction rgb depth metadata">
+            </div>
+
+
+            <br>
+            <div class="text-center">
+                <h4>Software</h4>
+            </div>
+
+            <div class="text-center">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel"  data-bs-interval="1000">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/car1.png" class="d-block w-50" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/car2.png" class="d-block w-50" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/car3.png" class="d-block w-50" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                </div>
+            </div>
+
+            <br>
+            
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        </div>
+    </body>
+</html>
+

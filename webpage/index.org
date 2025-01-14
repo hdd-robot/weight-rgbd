@@ -1,0 +1,36 @@
+#+title : Weight predection
+#+autor : Halim Djerroud
+#+date : 2020-04-20
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://gongzhitaao.org/orgcss/org.css"/>
+
+
+* Introduction
+This work presents the development and validation of a novel method for object weight prediction using data captured by an RGBD camera. To support this approach, we built an original dataset designed to integrate multimodal data, including RGB images, depth maps, and detailed metadata describing physical and visual properties.
+
+The dataset acquisition process relies on an automated system comprising three key components: a motorized turntable ensuring uniform multi-angle capture, a high-resolution RGBD camera for simultaneous visual and depth data acquisition, and dedicated control software that synchronizes the process to ensure reproducibility and efficiency. Each object is represented by 12 RGB images and their corresponding depth maps captured at regular angular intervals, providing a comprehensive 3D representation. Metadata includes object weight, material composition, and taxonomy, organized hierarchically using WordNet. This integration enhances semantic interpretability and facilitates research into contextual and relational object analysis.
+
+The dataset's multimodal richness and standardization make it an invaluable resource for diverse computer vision tasks, including weight prediction, object identification, and scene analysis. It opens new avenues for studying the interplay between visual features and material properties, offering significant contributions to the fields of machine learning and semantic scene understanding.
+
+
+[file:img/anImage.png]
+
+
+
+* Dataset
+You can download :
+
++ dataset link
++ database link
+
+
+* Labello software
+
+
+
+
+* Bibtex
+```
+comming
+
+```
+

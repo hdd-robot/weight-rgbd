@@ -151,7 +151,7 @@ def create_pcd_from_gray_and_rgbd():
                                 x = ((u + x_min) - cx) * z / fx ## A verifier 
                                 y = ((v + y_min) - cy) * z / fy
                                 points.append((x, y, z))  # Ajouter couleur
-                                colors.append(roi_rgb[v, u])  # Ajouter couleur
+                                colors.append(roi_rgb[v, u] / 255.0)  # Ajouter couleur
 
                     # Sauvegarder au format PCD
                     point_cloud = o3d.geometry.PointCloud()
@@ -219,7 +219,6 @@ def create_pcd_from_gray_and_rgbd():
                 print(f"Erreur lors du traitement de la ligne {index} : {e}")
     except Exception as e:
         print(f"Erreur lors du chargement des métadonnées ou du traitement : {e}")
-                
 
 if __name__ == '__main__':
     create_pcd_from_gray_and_rgbd()

@@ -14,7 +14,7 @@ from ultralytics import YOLO
 import cv2
 
 
-model = YOLO('yolov8n.pt')  # Vous pouvez utiliser 'yolov8s.pt', 'yolov8m.pt', etc.
+model = YOLO('yolov8n.pt')  #  'yolov8s.pt', 'yolov8m.pt'
 
 
 def parse_intrinsec_string(intrinsec_str):
@@ -121,8 +121,15 @@ def create_pcd_from_gray_and_rgbd():
                     if class_name != "book":
                         continue;
 
-                    rgb_image = cv2.imread(str(rgb_path), cv2.COLOR_BGR2RGB)  
+                    rgb_image = cv2.imread(str(rgb_path))
+                    rgb_image = cv2.cvtColor(rgb_image, cv2.COLOR_BGR2RGB)
+
                     depth_image = cv2.imread(str(gry_path), cv2.IMREAD_UNCHANGED)
+
+
+
+
+
 
                     roi_rgb = rgb_image[y_min:y_max, x_min:x_max]
                     roi_depth = depth_image[y_min:y_max, x_min:x_max]
@@ -138,13 +145,13 @@ def create_pcd_from_gray_and_rgbd():
                     for v in range(int(height_img)):
                         for u in range(int(width_img)):
                             z = roi_depth[v, u] / 1000.0  # Profondeur en millimètres
-                            if z > 0:  # Ignorer les pixels sans profondeur valide
-                                x = (u - cx) * z / fx
-                                y = (v - cy) * z / fy
+                            if z > 0 and z < 10 :  # Ignorer les pixels sans profondeur valide
+                                #x = (u - cx) * z / fx
+                                #y = (v - cy) * z / fy
+                                x = ((u + x_min) - cx) * z / fx ## A verifier 
+                                y = ((v + y_min) - cy) * z / fy
                                 points.append((x, y, z))  # Ajouter couleur
                                 colors.append(roi_rgb[v, u])  # Ajouter couleur
-
-
 
                     # Sauvegarder au format PCD
                     point_cloud = o3d.geometry.PointCloud()
@@ -204,7 +211,7 @@ def create_pcd_from_gray_and_rgbd():
                     #                        [0, 0, 0, 1]])
 
                     o3d.io.write_point_cloud(pcd_path, point_cloud)
-
+                    o3d.io.write_point_cloud(ply_path, point_cloud)
                     #exit()
             except Exception as e:
                 traceback.print_exc()
